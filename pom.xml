@@ -162,7 +162,7 @@
                     </includes>
                 </configuration>
             </plugin>
-            <!-- Generate report -->
+            <!-- Generate report
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
@@ -176,21 +176,18 @@
                         </goals>
                         <configuration>
                             <projectName>REPORT CUCUMBER</projectName>
-                            <!-- optional, per documentation set this to "true" to bypass generation
-                                of Cucumber Reports entirely, defaults to false if not specified -->
                             <skip>false</skip>
-                            <!-- output directory for the generated report -->
                             <outputDirectory>${project.build.directory}/site/cucumber-reporting</outputDirectory>
-                            <!-- optional, defaults to outputDirectory if not specified -->
                             <inputDirectory>${project.build.directory}/site</inputDirectory>
                             <jsonFiles>
-                                <!-- supports wildcard or name pattern -->
                                 <param>**/*.json</param>
                             </jsonFiles>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+            -->
+
         </plugins>
     </build>
 </project>
