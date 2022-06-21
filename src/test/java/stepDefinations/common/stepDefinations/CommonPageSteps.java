@@ -5,20 +5,16 @@ import commons.GlobalConstants;
 import commons.PageGeneratorManager;
 import commons.VerifyHelper;
 import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumberOption.Hooks;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import pageObjects.mercury.LoginPageObject;
 import pageObjects.mercury.TaoChucNangPageObject;
 import pageUIs.alpaca.CommonPageUI;
-import utils.excelutils.ExcelReader;
-import utils.excelutils.ExcelUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +25,7 @@ public class CommonPageSteps {
     VerifyHelper verify;
     TaoChucNangPageObject taoChucNangPage;
     public static CommonPageObjects commonPage;
-    ExcelReader externalData;
-    List<Map<String, String>> testData;
+
     List<String> optionUIValues, dataTableValues;
     String dateTime;
 
@@ -338,7 +333,7 @@ public class CommonPageSteps {
         commonPage.sleepInSecond(3);
         commonPage.waitElementVisible(driver, CommonPageUI.COMMON_RADIO_BUTTON, radioButtonName);
         commonPage.clickToElement(driver, CommonPageUI.COMMON_RADIO_BUTTON, radioButtonName);
-      //  commonPage.clickToElement(driver, CommonPageUI.COMMON_BUTTON, "Xác nhận");
+        //  commonPage.clickToElement(driver, CommonPageUI.COMMON_BUTTON, "Xác nhận");
 
     }
 
@@ -358,7 +353,7 @@ public class CommonPageSteps {
         commonPage.chonGiaTri(driver, "Quận/Huyện", quanHuyen);
         commonPage.chonGiaTri(driver, "Phường/Xã", phuongXa);
         commonPage.sendKeyToElement(driver, CommonPageUI.COMMON_TEXTAREA, diaChi, "Địa chỉ");
-        commonPage.clickToElement(driver, CommonPageUI.COMMON_ICON,"Tạo");
+        commonPage.clickToElement(driver, CommonPageUI.COMMON_ICON, "Tạo");
         commonPage.switchToDefaultContent(driver);
 
     }
@@ -367,5 +362,6 @@ public class CommonPageSteps {
     @Then("^page \"([^\"]*)\" appear$")
     public boolean pageAppear(String tenPage) {
         // Write code here that turns the phrase above into concrete actions
-        return verify.checkTrue(commonPage.isElementDisplay(driver,CommonPageUI.TEN_PAGE_TITLE,tenPage));    }
+        return verify.checkTrue(commonPage.isElementDisplay(driver, CommonPageUI.TEN_PAGE_TITLE, tenPage));
+    }
 }
