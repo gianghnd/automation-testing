@@ -34,9 +34,7 @@ public class TaoNguoiDungPageObject extends AbstractPage {
 	}
 	
 	public void chonDonVi(String tenSelectBox, String giaTri) {
-	//	waitElementVisible(driver, TaoNguoiDungPageUI.DON_VI_TRUC_THUOC_SELECTBOX);
 		waitElementVisible(driver, TaoNguoiDungPageUI.COMMON_SELECTBOX, tenSelectBox);
-		//clickToElement(driver, TaoNguoiDungPageUI.DON_VI_TRUC_THUOC_SELECTBOX);
 		clickToElement(driver, TaoNguoiDungPageUI.COMMON_SELECTBOX, tenSelectBox);
 		sleepInSecond(1);
 		clickToElement(driver, "//div[contains(text(),'" + giaTri + "')]");
