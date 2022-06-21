@@ -1,8 +1,5 @@
 package cucumberOption;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
@@ -23,13 +20,12 @@ public class Hooks {
     private static WebDriver driver;
     public static final Logger log = Logger.getLogger(Hooks.class.getName());
 
-    @Before // synchronized = handle đồng bộ
+    @Before
     public synchronized static WebDriver openAndQuitBrowser() {
         // Run by Maven command line
         String browser = System.getProperty("BROWSER");
         System.out.println("Browser name run by command line = " + browser);
 
-        // Check driver đã được khởi tạo hay chưa?
         if (driver == null) {
 
             // Happy path case
@@ -46,8 +42,7 @@ public class Hooks {
 
                 switch (browser) {
                     case "chrome":
-                        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/browserDriver/chromedriver");
-                     //   WebDriverManager.chromedriver().setup(); //auto use newest that was installed in the system
+                        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/browserDriver/chromedriver");
                         driver = new ChromeDriver();
                         break;
                     case "hchrome":
@@ -80,27 +75,16 @@ public class Hooks {
                         driver = new ChromeDriver();
                         break;
                 }
-                // Browser crash/ stop
             } catch (UnreachableBrowserException e) {
                 driver = new ChromeDriver();
                 // Driver crash
             } catch (WebDriverException e) {
                 driver = new ChromeDriver();
-            }
-            // Code này luôn luôn được chạy dù pass hay fail
-            finally {
+            } finally {
                 Runtime.getRuntime().addShutdownHook(new Thread(new BrowserCleanup()));
             }
 
-            //driver.get(GlobalConstants.MERCURY_LOGIN_TEST_ENV_URL);
-//            driver.get(GlobalConstants.MERCURY_LOGIN_TEST_ENV_URL);
-//            LoginPageObject loginPage;
-//            loginPage= PageGeneratorManager.getLoginPage(driver);
-//            loginPage.inputUserName("TEST");
-//            loginPage.inputUserPassword("12341234");
-//            loginPage.clickDangNhapButton();
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-//            driver.manage().window().maximize();
             log.info("------------- Started the browser -------------");
         }
         return driver;
@@ -108,7 +92,6 @@ public class Hooks {
 
     public static void closeBrowserAndDriver() {
         try {
-            // get ra tên của OS và convert qua chữ thường
             String osName = System.getProperty("os.name").toLowerCase();
             log.info("OS name = " + osName);
 
@@ -151,7 +134,6 @@ public class Hooks {
     private static class BrowserCleanup implements Runnable {
         @Override
         public void run() {
-            //close();
             closeBrowserAndDriver();
         }
     }
