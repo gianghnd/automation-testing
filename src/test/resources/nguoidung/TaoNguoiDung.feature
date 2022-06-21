@@ -54,5 +54,5 @@ Feature: Tao Nguoi Dung
 
     Examples:
       | Tên Đăng Nhập | Họ Và Tên | Email | Số điện thoại | Đơn Vị       | Phòng Ban     | Chức Năng | Chức Danh |
-      | autoX7 	| automation7 	| autox4@mailinator.com 	| 0988042153 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
-      | autoY7 	| testing7 	| autoy4@mailinator.com 	| 0999042154 	| Trụ sở chính 	| Tái bảo hiểm 	| Tái bảo hiểm 	| Nhân viên |
+      | autoX9 	| automation9 	| autox4@mailinator.com 	| 0988042153 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
+      | autoY9 	| testing9 	| autoy4@mailinator.com 	| 0999042154 	| Trụ sở chính 	| Tái bảo hiểm 	| Tái bảo hiểm 	| Nhân viên |
