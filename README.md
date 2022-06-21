@@ -16,7 +16,7 @@ connguoi/CheckBieuPhiChiTietSK12.feature - validation
 
 
 EXECUTE 
-src -> test -> java -> cucumberOption -> JupiterTestRunner
+src -> test -> java -> cucumberOption -> DemoTestRunner
 
 
 IV. Other Libraries

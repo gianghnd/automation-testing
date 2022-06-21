@@ -17,6 +17,6 @@ import cucumber.api.junit.Cucumber;
                 "json:target/site/cucumber.json"},
         snippets = SnippetType.CAMELCASE,
         tags = {"@Tao_Nguoi_Dung"})
-public class MercuryTestRunner {
+public class DemoTestRunner {
     
 }
