@@ -2,9 +2,6 @@ package commons;
 
 import org.openqa.selenium.WebDriver;
 
-import pageObjects.jupiter.DanhSachBanChaoPageObject;
-import pageObjects.jupiter.TaoBanChaoPageObject;
-import pageObjects.mercury.DanhSachChucNangPageObject;
 import pageObjects.mercury.DanhSachNguoiDungPageObject;
 import pageObjects.mercury.LoginPageObject;
 import pageObjects.mercury.TaoChucNangPageObject;
@@ -27,18 +24,6 @@ public class PageGeneratorManager {
 
     public static DanhSachNguoiDungPageObject getDanhSachNguoiDungPage(WebDriver driver) {
         return new DanhSachNguoiDungPageObject(driver);
-    }
-
-    public static DanhSachChucNangPageObject getDanhSachChucNangPage(WebDriver driver) {
-        return new DanhSachChucNangPageObject(driver);
-    }
-
-    public static DanhSachBanChaoPageObject getDanhSachBanChaoPage(WebDriver driver) {
-        return new DanhSachBanChaoPageObject(driver);
-    }
-
-    public static TaoBanChaoPageObject getTaoBanChaoPage(WebDriver driver) {
-        return new TaoBanChaoPageObject(driver);
     }
 
     public static CommonPageObjects getCommonPage(WebDriver driver) {

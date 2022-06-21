@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="alpaca-automation" />
+        <module name="alpaca-cucumber" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="alpaca-automation" target="1.8" />
+      <module name="alpaca-cucumber" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
