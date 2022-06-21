@@ -13,7 +13,7 @@ Feature: Tao Nguoi Dung
     #Click button
     # I click "button name" button
     When I click "Tạo mới" button
-    Then page "Tạo người dùng" appear
+    Then page "Tạo người dùng1" appear
     # Input textbox
     # I input "textbox name" textbox with value "value"
     When I input "Tên đăng nhập" textbox with value "<Tên Đăng Nhập>"
@@ -54,5 +54,5 @@ Feature: Tao Nguoi Dung
 
     Examples:
       | Tên Đăng Nhập | Họ Và Tên | Email | Số điện thoại | Đơn Vị       | Phòng Ban     | Chức Năng | Chức Danh |
-      | autoX2 	| giang 	| autox2@mailinator.com 	| 0988042152 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
-      | autoY2 	| giang hoa 	| autoy2@mailinator.com 	| 0999042153 	| Trụ sở chính 	| Tái bảo hiểm 	| Tái bảo hiểm 	| Nhân viên |
+      | autoX3 	| giang 	| autox2@mailinator.com 	| 0988042153 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
+      | autoY3 	| giang hoa 	| autoy2@mailinator.com 	| 0999042154 	| Trụ sở chính 	| Tái bảo hiểm 	| Tái bảo hiểm 	| Nhân viên |
