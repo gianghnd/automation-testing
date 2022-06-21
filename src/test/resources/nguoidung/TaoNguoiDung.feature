@@ -13,7 +13,7 @@ Feature: Tao Nguoi Dung
     #Click button
     # I click "button name" button
     When I click "Tạo mới" button
-    Then page "Tạo người dùng1" appear
+    Then page "Tạo người dùng" appear
     # Input textbox
     # I input "textbox name" textbox with value "value"
     When I input "Tên đăng nhập" textbox with value "<Tên Đăng Nhập>"
