@@ -18,9 +18,5 @@ import cucumber.api.junit.Cucumber;
         snippets = SnippetType.CAMELCASE,
         tags = {"@Tao_Nguoi_Dung"})
 public class MercuryTestRunner {
-    /*
-     * @Before public static void test() throws InvalidFormatException, IOException
-     * { FeatureOverright.overrideFeatureFiles(System.getProperty("user.dir")+
-     * "/src/test/resources/chucnang"); }
-     */
+    
 }
