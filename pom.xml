@@ -158,7 +158,7 @@
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <includes>
-                        <include>**/*/MercuryTestRunner.java</include>
+                        <include>**/*/DemoTestRunner.java</include>
                     </includes>
                 </configuration>
             </plugin>
