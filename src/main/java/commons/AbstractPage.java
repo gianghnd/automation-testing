@@ -28,13 +28,11 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pageUIs.alpaca.CommonPageUI;
 
 
 public abstract class AbstractPage {
 
     protected AbstractPage() {
-        //log=LogFactory.getLog(getClass());
         this.log = Logger.initLog();
     }
 
@@ -180,7 +178,7 @@ public abstract class AbstractPage {
         xpathValue = castToObject(xpathValue, elementName);
         element = find(driver, xpathValue);
         element.sendKeys(value);
-       // element.sendKeys(Keys.ENTER);
+        // element.sendKeys(Keys.ENTER);
     }
 
     public void clearValueInField(WebDriver driver, String xpathValue, String... elementName) {
@@ -191,7 +189,7 @@ public abstract class AbstractPage {
     }
 
     public void sendkeyToElementByJS(WebDriver driver, String locator, String value, String... params) {
-        locator =castToObject(locator, params);
+        locator = castToObject(locator, params);
         jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("arguments[0].setAttribute('value', '" + value + "')", find(driver, locator));
     }
@@ -257,41 +255,20 @@ public abstract class AbstractPage {
         sleepInSecond(1);
 
         clickToElement(driver, parentLocator);
-        // sendKeyToElement(driver, parentLocator,expectedItem);
 
-        //clickToElementByJS(driver, parentLocator);
-        //   sleepInSecond(1);
         explicitWait = new WebDriverWait(driver, longTimeOut);
         explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(byXpath(childItemLocator)));
         elements = finds(driver, childItemLocator);
         for (WebElement item : elements) {
             if (item.getText().contains(expectedItem)) {
-                // item.sendKeys(expectedItem);
                 jsExecutor = (JavascriptExecutor) driver;
                 jsExecutor.executeScript("arguments[0].scrollIntoView(true);", item);
                 sleepInSecond(1);
                 scrollToTPage(driver);
                 item.click();
-               //   sleepInSecond(5);
                 break;
             }
         }
-    }
-
-    public List<WebElement> getItemInCustomDropdown(WebDriver driver, String parentLocator, String childItemLocator,
-                                                    String... parentName) {
-
-        parentLocator = castToObject(parentLocator, parentName);
-        sleepInSecond(1);
-        clickToElement(driver, parentLocator);
-        // sendKeyToElement(driver, parentLocator,expectedItem);
-
-        //clickToElementByJS(driver, parentLocator);
-        sleepInSecond(1);
-        explicitWait = new WebDriverWait(driver, longTimeOut);
-        explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(byXpath(childItemLocator)));
-        elements = finds(driver, childItemLocator);
-        return elements;
     }
 
     public void sleepInSecond(long timeout) {
@@ -461,7 +438,7 @@ public abstract class AbstractPage {
 
     public boolean isElementDisable(WebDriver driver, String xpathValue, String... values) {
         xpathValue = castToObject(xpathValue, values);
-        if(find(driver, xpathValue).isEnabled()){
+        if (find(driver, xpathValue).isEnabled()) {
             return false;
         }
         return true;

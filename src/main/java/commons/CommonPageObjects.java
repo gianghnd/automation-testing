@@ -16,21 +16,6 @@ public class CommonPageObjects extends AbstractPage {
         driver = mappedDriver;
     }
 
-    /*public void clickTaoButton(WebDriver driver) {
-        waitElementClickable(driver, CommonPageUI.TAO_BUTTON);
-        clickToElement(driver, CommonPageUI.TAO_BUTTON);
-    }
-
-    public void clickTaoMoiButton(WebDriver driver) {
-        waitElementClickable(driver, CommonPageUI.TAO_MOI_BUTTON);
-        clickToElement(driver, CommonPageUI.TAO_MOI_BUTTON);
-    }
-
-    public void clickHuyButton(WebDriver driver) {
-        waitElementClickable(driver, CommonPageUI.HUY_BUTTON);
-        clickToElement(driver, CommonPageUI.HUY_BUTTON);
-    }*/
-
     public void clickToDynamicButton(WebDriver driver, String buttonName) {
         waitElementClickable(driver, CommonPageUI.COMMON_BUTTON, buttonName);
         scrollToTPage(driver);
@@ -53,11 +38,6 @@ public class CommonPageObjects extends AbstractPage {
     }
 
     public void goToPage(WebDriver driver, String pageName) {
-      //  sleepInSecond(1);
-      /*  waitElementClickable(driver, CommonPageUI.MAIN_MENU);
-        clickToElement(driver, CommonPageUI.MAIN_MENU);*/
-       /* waitElementClickable(driver, CommonPageUI.FUNCTION_MENU, pageName);
-        clickToElement(driver, CommonPageUI.FUNCTION_MENU, pageName);*/
             driver.get(GlobalConstants.JUPITER_LOGIN_SIT_ENV_URL);
     }
 
@@ -69,8 +49,6 @@ public class CommonPageObjects extends AbstractPage {
     public void checkToastMessage(WebDriver driver, String message) {
         sleepInSecond(1);
         waitElementVisible(driver, CommonPageUI.TOAST_MESSAGE);
-
-        //return checkTrue(isElementDisplay(driver, CommonPageUI.TOAST_MESSAGE, message));
         Assert.assertEquals(message, getElementText(driver, CommonPageUI.TOAST_MESSAGE));
     }
 
@@ -86,8 +64,6 @@ public class CommonPageObjects extends AbstractPage {
         List<WebElement> optionLists = finds(driver, CommonPageUI.COMMON_CHILD_SELECTBOX);
         ArrayList<String> optionValue = new ArrayList<String>();
         for (WebElement option : optionLists) {
-			/*jsExecutor = (JavascriptExecutor) driver;
-			jsExecutor.executeScript("arguments[0].scrollIntoView(true);", option);*/
             optionValue.add(option.getText());
         }
 
@@ -99,16 +75,7 @@ public class CommonPageObjects extends AbstractPage {
     public void chonGiaTri(WebDriver driver, String tenSelectBox, String giaTri) {
         waitElementVisible(driver, CommonPageUI.COMMON_PARENT_SELECTBOX, tenSelectBox);
         selectItemInCustomDropdown(driver, CommonPageUI.COMMON_PARENT_SELECTBOX, CommonPageUI.COMMON_CHILD_SELECTBOX, giaTri, tenSelectBox);
-      /*  waitElementVisible(driver, CommonPageUI.COMMON_SELECTBOX, tenSelectBox);
-        selectItemInDropDown(driver, CommonPageUI.COMMON_SELECTBOX, giaTri, tenSelectBox);*/
     }
-
- /*   public void chonSTBHBS03(WebDriver driver, String giaTri) {
-        waitElementVisible(driver, CommonPageUI.BS03DropDown);
-        selectItemInCustomDropdown(driver, CommonPageUI.COMMON_PARENT_SELECTBOX, CommonPageUI.COMMON_CHILD_SELECTBOX, giaTri, tenSelectBox);
-      *//*  waitElementVisible(driver, CommonPageUI.COMMON_SELECTBOX, tenSelectBox);
-        selectItemInDropDown(driver, CommonPageUI.COMMON_SELECTBOX, giaTri, tenSelectBox);*//*
-    }*/
 
     public void selectGiaTri(WebDriver driver, String tenSelectBox, String giaTri) {
         waitElementVisible(driver, CommonPageUI.COMMON_PARENT_SELECTBOX + "/select", tenSelectBox);
@@ -117,43 +84,12 @@ public class CommonPageObjects extends AbstractPage {
     }
 
     public String getValueFromCell(WebDriver driver, String colummName, String rowName) {
-        // waitElementVisible(driver, CommonPageUI.DYNAMIC_COLOUMN_INDEX, colummName);
         int columnPosition = countElementNumber(driver, CommonPageUI.COMMON_COLOUMN_INDEX, colummName) + 1;
 
         int rowPosition = countElementNumber(driver, CommonPageUI.COMMON_ROW_INDEX, rowName) + 1;
         waitElementVisible(driver, CommonPageUI.COMMON_CELL_INPUT_INDEX, Integer.toString(rowPosition), Integer.toString(columnPosition));
-        //sendKeyToElement(driver, AbstracPageUI.DYNAMIC_CELL_INDEX, value,Integer.toString(rowPosition), Integer.toString(columnPosition));
-
         return getElementAttribute(driver, CommonPageUI.COMMON_CELL_INPUT_INDEX, "value", Integer.toString(rowPosition), Integer.toString(columnPosition));
     }
-
-    public void inputValueLoaiHinhBH(WebDriver driver, String value,String colummName, String rowName) {
-        //waitElementVisible(driver, CommonPageUI.COMMON_COLOUMN_INDEX, colummName);
-        int columnPosition = countElementNumber(driver, CommonPageUI.COMMON_COLOUMN_INDEX, colummName) + 1;
-
-        int rowPosition = countElementNumber(driver, CommonPageUI.COMMON_ROW_INDEX, rowName) + 1;
-
-
-        waitElementVisible(driver, CommonPageUI.COMMON_CELL_INPUT_INDEX, Integer.toString(rowPosition), Integer.toString(columnPosition));
-        //sendKeyToElement(driver, AbstracPageUI.DYNAMIC_CELL_INDEX, value,Integer.toString(rowPosition), Integer.toString(columnPosition));
-
-        clearValueInField(driver,CommonPageUI.COMMON_CELL_INPUT_INDEX,Integer.toString(rowPosition), Integer.toString(columnPosition));
-        sendKeyToElement(driver, CommonPageUI.COMMON_CELL_INPUT_INDEX, value,Integer.toString(rowPosition), Integer.toString(columnPosition));
-       // sleepInSecond(1);
-    }
-
-    public void selectValueLoaiHinhBH(WebDriver driver, String value,String colummName, String rowName) {
-        // waitElementVisible(driver, CommonPageUI.DYNAMIC_COLOUMN_INDEX, colummName);
-        int columnPosition = countElementNumber(driver, CommonPageUI.COMMON_COLOUMN_INDEX, colummName) + 1;
-
-        int rowPosition = countElementNumber(driver, CommonPageUI.COMMON_ROW_INDEX, rowName) + 1;
-        waitElementVisible(driver, CommonPageUI.COMMON_CELL_INPUT_INDEX, Integer.toString(rowPosition), Integer.toString(columnPosition));
-        //sendKeyToElement(driver, AbstracPageUI.DYNAMIC_CELL_INDEX, value,Integer.toString(rowPosition), Integer.toString(columnPosition));
-
-        sendKeyToDropdownBox(driver, CommonPageUI.COMMON_CELL_INPUT_INDEX, value,Integer.toString(rowPosition), Integer.toString(columnPosition));
-        sleepInSecond(1);
-    }
-
 
     public String getTextFromCell(WebDriver driver, String colummName, String rowName) {
         // waitElementVisible(driver, CommonPageUI.DYNAMIC_COLOUMN_INDEX, colummName);
@@ -199,46 +135,6 @@ public class CommonPageObjects extends AbstractPage {
         clickToElement(driver, CommonPageUI.COMMON_CELL_LINK, Integer.toString(rowPosition), Integer.toString(columnPosition));
     }
 
-    public String applyCellFormular(String formular, String value) {
-        if (formular.contains("{value}")) {
-            formular = formular.replace("{value}", value);
-        } else if(formular.contains("{SoChoNgoi}")) {
-            formular = formular.replace("{SoChoNgoi}", value);
-        }
-        else if(!formular.contains("/100")){
-            return "false";
-        }
-        return formular;
-    }
-
-    public String inputCellValue(WebDriver driver, String formular, String tenField, String value) {
-        if (formular.contains("{value}<3")) {
-            sendKeyToElement(driver,CommonPageUI.COMMON_TEXTBOX,value,tenField);
-        } else if(formular.contains("{value}>=3&&{value}<=8")) {
-            sendKeyToElement(driver,CommonPageUI.COMMON_TEXTBOX,value,tenField);
-        }
-        else if(formular.contains("{value}>8&&{value}<=15")){
-            sendKeyToElement(driver,CommonPageUI.COMMON_TEXTBOX,value,tenField);
-        } else if (formular.contains("{value}>15")){
-            sendKeyToElement(driver,CommonPageUI.COMMON_TEXTBOX,value,tenField);
-        }else if (formular.contains("{value}<6")){
-            sendKeyToElement(driver,CommonPageUI.COMMON_TEXTBOX,value,tenField);
-        }
-        else if (formular.contains("{value}>=6&&{value}<=11")){
-            sendKeyToElement(driver,CommonPageUI.COMMON_TEXTBOX,value,tenField);
-        }
-        else if (formular.contains("{value}>=12&&{value}<=24")){
-            sendKeyToElement(driver,CommonPageUI.COMMON_TEXTBOX,value,tenField);
-        }
-        else if (formular.contains("{value}>24")){
-            sendKeyToElement(driver,CommonPageUI.COMMON_TEXTBOX,value,tenField);
-        }else {
-            sendKeyToElement(driver,CommonPageUI.COMMON_TEXTBOX,value,tenField);
-        }
-
-        return formular;
-    }
-
     public void selectOptionFromContextmenu(WebDriver driver, String option, String recordValue) {
         waitElementClickable(driver, CommonPageUI.ACTION_MENU, recordValue);
         clickToElement(driver, CommonPageUI.ACTION_MENU, recordValue);
@@ -258,14 +154,6 @@ public class CommonPageObjects extends AbstractPage {
         clearValueInField(driver, CommonPageUI.COMMON_TEXTBOX, tenField);
 
         sendKeyToElement(driver, CommonPageUI.COMMON_TEXTBOX, value, tenField);
-    }
-
-    public void inputValueIntoCustomDropdownBox(WebDriver driver, String tenField, String value) {
-        waitElementVisible(driver, CommonPageUI.COMMON_PARENT_SELECTBOX, tenField);
-        clickToElement(driver, CommonPageUI.COMMON_PARENT_SELECTBOX, tenField);
-        sendKeyToDropdownBox(driver, CommonPageUI.COMMON_PARENT_SELECTBOX, value, tenField);
-        sleepInSecond(1);
-        sendKeyBoardToElement(driver, CommonPageUI.COMMON_PARENT_SELECTBOX,Keys.ENTER, tenField);
     }
 
     public void inputValueIntoTextArea(WebDriver driver, String tenField, String value) {

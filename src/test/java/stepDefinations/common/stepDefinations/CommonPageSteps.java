@@ -13,17 +13,16 @@ import cucumberOption.Hooks;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import pageObjects.mercury.LoginPageObject;
-import pageObjects.mercury.TaoChucNangPageObject;
 import pageUIs.alpaca.CommonPageUI;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class CommonPageSteps {
     WebDriver driver;
     VerifyHelper verify;
-    TaoChucNangPageObject taoChucNangPage;
     public static CommonPageObjects commonPage;
 
     List<String> optionUIValues, dataTableValues;
@@ -55,6 +54,7 @@ public class CommonPageSteps {
         loginPage.inputUserName("hd11801");
         loginPage.inputUserPassword("ScoreAdmin8@");// ScoreAdmin8@
         loginPage.clickDangNhapButton();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);// Network was lag
     }
 
     @Given("^I open \"([^\"]*)\" page$")
@@ -361,7 +361,6 @@ public class CommonPageSteps {
 
     @Then("^page \"([^\"]*)\" appear$")
     public boolean pageAppear(String tenPage) {
-        // Write code here that turns the phrase above into concrete actions
         return verify.checkTrue(commonPage.isElementDisplay(driver, CommonPageUI.TEN_PAGE_TITLE, tenPage));
     }
 }
