@@ -51,8 +51,8 @@ public class CommonPageSteps {
         driver.manage().window().maximize();
         LoginPageObject loginPage;
         loginPage = PageGeneratorManager.getLoginPage(driver);
-        loginPage.inputUserName("hd11801");
-        loginPage.inputUserPassword("ScoreAdmin8@");// ScoreAdmin8@
+        loginPage.inputUserName("admin");
+        loginPage.inputUserPassword("Alpaca@2022");
         loginPage.clickDangNhapButton();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);// Network was lag
     }
