@@ -25,9 +25,6 @@ Feature: Tao Nguoi Dung
     And I select "Chức danh" dropdown list with "Chức Danh" value
       | Chức Danh   |
       | <Chức Danh> |
-   # And I select "Vai trò" dropdown list with "Vai Trò" value
-    #  | Vai Trò   |
-     # | <Vai Trò> |
     And I click Tạo icon
     And I logout
     When I activate account with value "<Email>"
