@@ -41,7 +41,7 @@
 		<appender-ref ref="console" />
 		<appender-ref ref="logfile" />
 		<appender-ref ref="file" />
-		<appender-ref ref="testng" />
+	<!--	<appender-ref ref="testng" /> ! Giang comment-->
 	</category>
 
 	<category name="com.wordpress.login">
