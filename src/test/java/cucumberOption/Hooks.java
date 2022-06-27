@@ -46,7 +46,7 @@ public class Hooks {
                         WebDriverManager.chromedriver().setup();
                         ChromeOptions chromeOptions = new ChromeOptions();
                         chromeOptions.addArguments("headless");
-                        chromeOptions.addArguments("window-size=1920x1080");
+                        //chromeOptions.addArguments("window-size=1920x1080");//hidden the chrome
                         driver = new ChromeDriver(chromeOptions);
                         break;
                     case "firefox":
