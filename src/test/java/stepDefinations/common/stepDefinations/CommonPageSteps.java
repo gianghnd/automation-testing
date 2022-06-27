@@ -51,14 +51,18 @@ public class CommonPageSteps {
 
     @Given("^I launch login Admin page as admin$")
     public void iLoginAdminPageAsAdmin() {
-        driver.get(GlobalConstants.MERCURY_LOGIN_SIT_ENV_URL);
-        driver.manage().window().maximize();
-        LoginPageObject loginPage;
-        loginPage = PageGeneratorManager.getLoginPage(driver);
-        loginPage.inputUserName("admin");
-        loginPage.inputUserPassword("Alpaca@2022");
-        loginPage.clickDangNhapButton();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);// Network was lag
+        try{
+            driver.get(GlobalConstants.MERCURY_LOGIN_SIT_ENV_URL);
+            driver.manage().window().maximize();
+            LoginPageObject loginPage;
+            loginPage = PageGeneratorManager.getLoginPage(driver);
+            loginPage.inputUserName("admin");
+            loginPage.inputUserPassword("Alpaca@2022");
+            loginPage.clickDangNhapButton();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);// Network was lag
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 
     @Given("^I open \"([^\"]*)\" page$")
