@@ -33,7 +33,7 @@ public class Hooks {
                     browser = System.getenv("BROWSER");
                     if (browser == null) {
                         // Set default browser
-                        browser = "hchrome";
+                        browser = "chrome";
                     }
                 }
 
