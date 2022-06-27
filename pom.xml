@@ -130,7 +130,7 @@
                     <argLine>-BROWSER=chrome</argLine>
                 </configuration>
             </plugin> -->
-            <!-- Generate report
+            <!-- Generate report !-->
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
@@ -154,8 +154,9 @@
                     </execution>
                 </executions>
             </plugin>
-!-->
 
+
+            <!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -183,7 +184,10 @@
                     </execution>
                 </executions>
             </plugin>
-            
+            !-->
+
+
+
         </plugins>
 
     </build>
