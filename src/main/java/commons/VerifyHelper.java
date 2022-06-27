@@ -5,8 +5,11 @@ import org.junit.Assert;
 import org.junit.runner.notification.Failure;
 
 import org.junit.internal.runners.model.EachTestNotifier;
+import org.openqa.selenium.WebDriver;
 
 import static commons.Logger.log;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class VerifyHelper {
 
@@ -31,7 +34,7 @@ public class VerifyHelper {
             } else {
                 log.info(" -------------------------- FAILED -------------------------- ");
             }
-            Assert.assertTrue(condition);
+            assertTrue(condition);
         } catch (Throwable e) {
             e.printStackTrace();
             failedStep = false;
@@ -64,7 +67,7 @@ public class VerifyHelper {
         boolean pass = true;
 
         try {
-            Assert.assertEquals(expected, actual);
+            assertEquals(expected, actual);
 
         } catch (Throwable e) {
             pass = false;
@@ -76,5 +79,12 @@ public class VerifyHelper {
         return checkEquals(expected, actual);
     }
 
+    public boolean titlePage(WebDriver locator, String data) {
+        String txt = locator.getTitle();
+        if (txt.equals(data)) {
+            return true;
+        }
+        return false;
+    }
 
 }

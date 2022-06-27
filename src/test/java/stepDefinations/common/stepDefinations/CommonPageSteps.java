@@ -361,6 +361,7 @@ public class CommonPageSteps {
 
     @Then("^page \"([^\"]*)\" appear$")
     public boolean pageAppear(String tenPage) {
-        return verify.checkTrue(commonPage.isElementDisplay(driver, CommonPageUI.TEN_PAGE_TITLE, tenPage));
+        //return verify.checkTrue(commonPage.isElementDisplay(driver, CommonPageUI.TEN_PAGE_TITLE, tenPage));
+        return verify.titlePage(driver, tenPage);
     }
 }
