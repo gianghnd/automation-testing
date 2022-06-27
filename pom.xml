@@ -123,13 +123,13 @@
                 </configuration>
             </plugin>
 
-            <plugin>
+            <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <argLine>-BROWSER=chrome</argLine>
                 </configuration>
-            </plugin>
+            </plugin>-->
             <!-- Generate report
             <plugin>
                 <groupId>net.masterthought</groupId>
