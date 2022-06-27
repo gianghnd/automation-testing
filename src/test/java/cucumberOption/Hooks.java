@@ -38,11 +38,11 @@ public class Hooks {
                 }
 
                 switch (browser) {
-                    case "chrome"://change to have default headless mode chrome
+                    case "hchrome"://change to have default headless mode chrome
                         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/browserDriver/chromedriver");
                         driver = new ChromeDriver();
                         break;
-                    case "hchrome"://change to have default headless mode hchrome
+                    case "chrome"://change to have default headless mode hchrome
                         WebDriverManager.chromedriver().setup();
                         ChromeOptions chromeOptions = new ChromeOptions();
                         chromeOptions.addArguments("headless");
