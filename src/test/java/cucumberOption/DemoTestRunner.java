@@ -12,6 +12,8 @@ import cucumber.api.junit.Cucumber;
         glue = "stepDefinations",
         monochrome=true,
         dryRun = false,
+        format= {"pretty","html:test-output_1",
+                "json:target/cucumber-reports/CucumberTestReport.json"},
         plugin= {"pretty",
                 "html:target/site/cucumber-report-default",
                 "json:target/site/cucumber.json"},
