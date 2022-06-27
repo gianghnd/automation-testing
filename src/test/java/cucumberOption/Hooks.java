@@ -27,10 +27,7 @@ public class Hooks {
         System.out.println("Browser name run by command line = " + browser);
 
         if (driver == null) {
-
-            // Happy path case
             try {
-                // Kiem tra BROWSER = null -> gan = chrome/ firefox (browser default for project)
                 if (browser == null) {
                     // Get browser name from Environment Variable in OS
                     browser = System.getenv("BROWSER");
@@ -41,11 +38,11 @@ public class Hooks {
                 }
 
                 switch (browser) {
-                    case "chrome":
+                    case "hchrome"://change to have default headless mode
                         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/browserDriver/chromedriver");
                         driver = new ChromeDriver();
                         break;
-                    case "hchrome":
+                    case "chrome"://change to have default headless mode
                         WebDriverManager.chromedriver().setup();
                         ChromeOptions chromeOptions = new ChromeOptions();
                         chromeOptions.addArguments("headless");
