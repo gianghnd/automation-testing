@@ -38,15 +38,15 @@ public class Hooks {
                 }
 
                 switch (browser) {
-                    case "chrome"://change to have default headless mode chrome
+                    case "hchrome"://change to have default headless mode chrome
                         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/browserDriver/chromedriver");
                         driver = new ChromeDriver();
                         break;
-                    case "hchrome"://change to have default headless mode hchrome
+                    case "chrome"://change to have default headless mode hchrome
                         WebDriverManager.chromedriver().setup();
                         ChromeOptions chromeOptions = new ChromeOptions();
                         chromeOptions.addArguments("headless");
-                        //chromeOptions.addArguments("window-size=1920x1080");//hidden the chrome
+                        chromeOptions.addArguments("window-size=1920x1080");//hidden the chrome
                         driver = new ChromeDriver(chromeOptions);
                         break;
                     case "firefox":
