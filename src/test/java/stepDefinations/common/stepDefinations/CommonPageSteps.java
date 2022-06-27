@@ -29,9 +29,13 @@ public class CommonPageSteps {
     String dateTime;
 
     public CommonPageSteps() {
-        this.driver = Hooks.openAndQuitBrowser();
-        verify = VerifyHelper.getData();
-        commonPage = PageGeneratorManager.getCommonPage(driver);
+        try{
+            this.driver = Hooks.openAndQuitBrowser();
+            verify = VerifyHelper.getData();
+            commonPage = PageGeneratorManager.getCommonPage(driver);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 
     @Given("^I launch and login Jupiter page as admin$")
