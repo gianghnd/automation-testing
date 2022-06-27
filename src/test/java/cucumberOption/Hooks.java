@@ -33,16 +33,16 @@ public class Hooks {
                     browser = System.getenv("BROWSER");
                     if (browser == null) {
                         // Set default browser
-                        browser = "chrome";
+                        browser = "hchrome";
                     }
                 }
 
                 switch (browser) {
-                    case "hchrome"://change to have default headless mode chrome
+                    case "chrome"://change to have default headless mode chrome
                         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/browserDriver/chromedriver");
                         driver = new ChromeDriver();
                         break;
-                    case "chrome"://change to have default headless mode hchrome
+                    case "hchrome"://change to have default headless mode hchrome
                         WebDriverManager.chromedriver().setup();
                         ChromeOptions chromeOptions = new ChromeOptions();
                         chromeOptions.addArguments("headless");

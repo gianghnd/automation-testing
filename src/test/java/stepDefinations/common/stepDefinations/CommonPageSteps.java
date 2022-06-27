@@ -59,7 +59,7 @@ public class CommonPageSteps {
             loginPage.inputUserName("admin");
             loginPage.inputUserPassword("Alpaca@2022");
             loginPage.clickDangNhapButton();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);// Network was lag
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);// Network was lag
         }catch (Exception ex){
             ex.printStackTrace();
         }

@@ -26,10 +26,10 @@ Feature: Tao Nguoi Dung
       | Chức Danh   |
       | <Chức Danh> |
     And I click Tạo icon
-    And I logout
+    And I logoutx
     When I activate account with value "<Email>"
 
     Examples:
       | Tên Đăng Nhập | Họ Và Tên | Email | Số điện thoại | Đơn Vị       | Phòng Ban     | Chức Năng | Chức Danh |
-      | autoX26 | automa_tion26 	| autox26@mailinator.com 	| 0988049999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
+      | autoX26 | automa_tion26 	| axutox26@mailinator.com 	| 0988049999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
       #| autoY10 | test_ing10 	| autoy10@mailinator.com 	| 0999042154 	| Trụ sở chính 	| Tái bảo hiểm 	| Tái bảo hiểm 	| Nhân viên |
