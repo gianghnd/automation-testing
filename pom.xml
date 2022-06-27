@@ -129,8 +129,8 @@
                 <configuration>
                     <argLine>-BROWSER=chrome</argLine>
                 </configuration>
-            </plugin>-->
-            <!-- Generate report
+            </plugin> -->
+            <!-- Generate report -->
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
@@ -154,7 +154,7 @@
                     </execution>
                 </executions>
             </plugin>
-!-->
+
         </plugins>
     </build>
 </project>
