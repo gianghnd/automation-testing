@@ -130,7 +130,7 @@
                     <argLine>-BROWSER=chrome</argLine>
                 </configuration>
             </plugin> -->
-            <!-- Generate report
+            <!-- Generate report -->
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
@@ -154,60 +154,6 @@
                     </execution>
                 </executions>
             </plugin>
-!-->
-
-            <!--
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.0</version>
-                <configuration>
-                    <testFailureIgnore>true</testFailureIgnore>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>net.masterthought</groupId>
-                <artifactId>maven-cucumber-reporting</artifactId>
-                <version>2.8.0</version>
-                <executions>
-                    <execution>
-                        <id>execution</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <projectName>YOUR_PROJECT_Name</projectName>
-                            <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
-                            <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            !-->
-
-            <plugin>
-                <groupId>net.masterthought</groupId>
-                <artifactId>maven-cucumber-reporting</artifactId>
-                <executions>
-                    <execution>
-                        <id>generate-cucumber-reports</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <jsonFiles>
-                                <param>**/*.json</param>
-                            </jsonFiles>
-                            <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
-                            <inputDirectory>${project.build.directory}/cucumber</inputDirectory>
-                            <checkBuildResult>false</checkBuildResult>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
 
         </plugins>
 
