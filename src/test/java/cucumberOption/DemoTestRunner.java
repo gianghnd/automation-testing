@@ -15,8 +15,8 @@ import cucumber.api.junit.Cucumber;
         format= {"pretty","html:test-output_1",
                 "json:target/cucumber-reports/CucumberTestReport.json"},
         plugin= {"pretty",
-                "html:target/site/cucumber-report-default",
-                "json:target/site/cucumber.json"},
+                "html:target/cucumber-report-default",
+                "json:target/cucumber.json"},
         snippets = SnippetType.CAMELCASE,
         tags = {"@Tao_Nguoi_Dung"})
 public class DemoTestRunner {
