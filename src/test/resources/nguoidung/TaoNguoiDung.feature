@@ -31,7 +31,7 @@ Feature: Tao Nguoi Dung
 
     Examples:
       | Tên Đăng Nhập | Họ Và Tên | Email | Số điện thoại | Đơn Vị       | Phòng Ban     | Chức Năng | Chức Danh |
-      | autoX32 | automa_tion32 	| axutox32@mailinator.com 	| 0988049999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
-      | autoY14 | test_ing14 	| autoy13@mailinator.com 	| 0999042154 	| Trụ sở chính 	| Tái bảo hiểm 	| Tái bảo hiểm 	| Nhân viên |
-      | autoX33 | automa_tion33 	| axutox29@mailinator.com 	| 0988049999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
-      | autoY15 | test_ing15 	| autoy12@mailinator.com 	| 0999042154 	| Trụ sở chính 	| Tái bảo hiểm 	| Tái bảo hiểm 	| Nhân viên |
+      | autoZ01 | automa_tion01 	| axutoz01@mailinator.com 	| 0988049999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
+      | autoY15 | test_ing15 	| autoy15@mailinator.com 	| 0999042154 	| Trụ sở chính 	| Tái bảo hiểm 	| Tái bảo hiểm 	| Nhân viên |
+      | autoX35 | automa_tion35 	| axutox35@mailinator.com 	| 0988049999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
+      | autoY15 | test_ing15 	| autoy15@mailinator.com 	| 0999042154 	| Trụ sở chính 	| Tái bảo hiểm 	| Tái bảo hiểm 	| Nhân viên |
