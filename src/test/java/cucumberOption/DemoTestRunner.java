@@ -16,7 +16,7 @@ import cucumber.api.junit.Cucumber;
                 "html:target/site/cucumber-report-default",
                 "json:target/site/cucumber.json"},
         snippets = SnippetType.CAMELCASE,
-        tags = {"@Create-User"})
+        tags = {"@Create-User, @Execute-With-New-User"})
 public class DemoTestRunner {
     
 }
