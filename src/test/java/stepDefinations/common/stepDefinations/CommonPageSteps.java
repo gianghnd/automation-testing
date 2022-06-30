@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import static commons.GlobalConstants.USER_ACCOUNT;
 import static commons.GlobalConstants.USER_PASSWORD;
 
 public class CommonPageSteps {
@@ -143,6 +144,9 @@ public class CommonPageSteps {
     @When("^I input \"([^\"]*)\" textbox with value \"([^\"]*)\"$")
     public void iInputTextbox(String tenField, String value) {
         commonPage.inputValueIntoTextbox(driver, tenField, value);
+        if(tenField.equalsIgnoreCase("Tên đăng nhập")){
+            USER_ACCOUNT = value;
+        }
     }
 
     @When("^I input \"([^\"]*)\" textarea with value \"([^\"]*)\"$")
@@ -400,7 +404,7 @@ public class CommonPageSteps {
             driver.manage().window().maximize();
             LoginPageObject loginPage;
             loginPage = PageGeneratorManager.getLoginPage(driver);
-            loginPage.inputUserName(userName);
+            loginPage.inputUserName(USER_ACCOUNT);
             loginPage.inputUserPassword(password);
             loginPage.clickDangNhapButton();
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);// Network was lag
