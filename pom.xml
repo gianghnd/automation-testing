@@ -98,6 +98,8 @@
 
     <build>
         <plugins>
+
+
             <!-- Compile code -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

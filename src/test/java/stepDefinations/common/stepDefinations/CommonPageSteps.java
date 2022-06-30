@@ -5,12 +5,14 @@ import commons.GlobalConstants;
 import commons.PageGeneratorManager;
 import commons.VerifyHelper;
 import cucumber.api.DataTable;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumberOption.Hooks;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pageObjects.mercury.LoginPageObject;
 import pageUIs.alpaca.CommonPageUI;
@@ -19,6 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+
+import static commons.GlobalConstants.USER_PASSWORD;
 
 public class CommonPageSteps {
     WebDriver driver;
@@ -38,7 +42,7 @@ public class CommonPageSteps {
         }
     }
 
-    @Given("^I launch and login Jupiter page as admin$")
+    /*@Given("^I launch and login Jupiter page as admin$")
     public void i_launch_and_login_Jupiter_page() {
         driver.get(GlobalConstants.JUPITER_LOGIN_TEST_ENV_URL);
         driver.manage().window().maximize();
@@ -48,7 +52,7 @@ public class CommonPageSteps {
         loginPage.inputUserPassword("Aa@123a");
         loginPage.clickDangNhapButton();
     }
-
+*/
     @Given("^I launch login Admin page as admin$")
     public void iLoginAdminPageAsAdmin() {
         try{
@@ -64,6 +68,21 @@ public class CommonPageSteps {
             ex.printStackTrace();
         }
     }
+
+    /*@When("^valid \"(.*)\" and \"(.*)\ is entered$")
+    public void when_valid_username_and_password_is_entered(String username,String password) throws Throwable
+    {
+        driver.findElement(By.xpath(".//*[@id='login']")).sendKeys(username);
+        driver.findElement(By.xpath(".//*[@id='password']")).sendKeys(password);
+    }*/
+
+    @Then("^user should logged in successfully$")
+    public void then_user_should_logged_in_successfully()
+    {
+        driver.findElement(By.xpath(".//*[@id='submit']")).click();
+        System.out.println("User Logged in successfully");
+    }
+
 
     @Given("^I open \"([^\"]*)\" page$")
     public void iOpenPage(String pageName) {
@@ -329,8 +348,8 @@ public class CommonPageSteps {
         System.out.println("URL: " + url);
         commonPage.switchToDefaultContent(driver);
         driver.get(url);
-        commonPage.sendKeyToElement(driver, "//input[@id='password']", "Aa@123");
-        commonPage.sendKeyToElement(driver, "//input[@id='verifyPassword']", "Aa@123");
+        commonPage.sendKeyToElement(driver, "//input[@id='password']", USER_PASSWORD);
+        commonPage.sendKeyToElement(driver, "//input[@id='verifyPassword']", USER_PASSWORD);
         commonPage.clickToElement(driver, "//button[@type='submit']");
 
     }
@@ -372,4 +391,40 @@ public class CommonPageSteps {
         //return verify.checkTrue(commonPage.isElementDisplay(driver, CommonPageUI.TEN_PAGE_TITLE, tenPage));
         return verify.titlePage(driver, tenPage);
     }
+
+    @Given("^user navigates to Login page with user \"([^\"]*)\" and password \"([^\"]*)\"$")
+    public void userNavigatesToLoginPageWithUserAndPassword(String userName, String password) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        try{
+            driver.get(GlobalConstants.MERCURY_LOGIN_SIT_ENV_URL);
+            driver.manage().window().maximize();
+            LoginPageObject loginPage;
+            loginPage = PageGeneratorManager.getLoginPage(driver);
+            loginPage.inputUserName(userName);
+            loginPage.inputUserPassword(password);
+            loginPage.clickDangNhapButton();
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);// Network was lag
+        }catch (Exception ex){
+            ex.printStackTrace();
+            throw new PendingException();
+        }
+    }
+
+
+
+    /*@Given("^user navigates to Login page with user \"([^\"]*)\" and password \"([^\"]*)\" $")//todo giang
+    public void iLoginAsUser(String userName, String password) {
+        try{
+            driver.get(GlobalConstants.MERCURY_LOGIN_SIT_ENV_URL);
+            driver.manage().window().maximize();
+            LoginPageObject loginPage;
+            loginPage = PageGeneratorManager.getLoginPage(driver);
+            loginPage.inputUserName(userName);
+            loginPage.inputUserPassword(password);
+            loginPage.clickDangNhapButton();
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);// Network was lag
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }*/
 }

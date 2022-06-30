@@ -1,8 +1,8 @@
 @Create-User
 Feature: Create User
-  As a Admin User I want to Tao Nguoi Dung
+  As a Admin User I want to Create User
 
-  Scenario Outline: Create Người Dùng with all fields
+  Scenario Outline: Create User with all fields
     Given I launch login Admin page as admin
     When I click "Tạo mới" button
     Then page "Tạo người dùng" appear
@@ -31,7 +31,7 @@ Feature: Create User
 
     Examples:
       | Tên Đăng Nhập | Họ Và Tên | Email | Số điện thoại | Đơn Vị       | Phòng Ban     | Chức Năng | Chức Danh |
-      | autoZ04 | automa_tion04 	| axutoz04@mailinator.com 	| 0988049999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
+      | autoZ06 | automa_tion06 	| axutoz06@mailinator.com 	| 0988049999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
      # | autoY15 | test_ing15 	| autoy15@mailinator.com 	| 0999042154 	| Trụ sở chính 	| Tái bảo hiểm 	| Tái bảo hiểm 	| Nhân viên |
     #  | autoX35 | automa_tion35 	| axutox35@mailinator.com 	| 0988049999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
     #  | autoY15 | test_ing15 	| autoy15@mailinator.com 	| 0999042154 	| Trụ sở chính 	| Tái bảo hiểm 	| Tái bảo hiểm 	| Nhân viên |
