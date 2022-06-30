@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/nguoidung/Execute-With-New-User.feature",
+        features = "src/test/resources/nguoidung",
         glue = "stepDefinations",
         monochrome=true,
         dryRun = false,
@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
                 "html:target/site/cucumber-report-default",
                 "json:target/site/cucumber.json"},
         snippets = SnippetType.CAMELCASE,
-        tags = {"@Execute-With-New-User"})
+        tags = {"@Execute-With-New-User, @Create-User"})
 public class DemoTestRunner02 {
     
 }
