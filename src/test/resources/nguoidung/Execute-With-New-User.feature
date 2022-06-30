@@ -8,4 +8,4 @@ Feature: Execute With New User
 
     Examples:
       | Tên Đăng Nhập | Mật Khẩu |
-      | autoZ07 | Abc@123 |
+      | autoZ08 | Abc@123 |
