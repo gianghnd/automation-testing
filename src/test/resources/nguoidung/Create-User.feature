@@ -1,4 +1,4 @@
-@Tao_Nguoi_Dung
+@Create-User
 Feature: Tao Nguoi Dung
   As a Admin User I want to Tao Nguoi Dung
 
