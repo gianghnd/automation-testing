@@ -26,12 +26,12 @@ Feature: Create User
       | Chức Danh   |
       | <Chức Danh> |
     And I click Tạo icon
-    And I logoutx
+    And I logout
     When I activate account with value "<Email>"
 
     Examples:
       | Tên Đăng Nhập | Họ Và Tên | Email | Số điện thoại | Đơn Vị       | Phòng Ban     | Chức Năng | Chức Danh |
-      | autoZ06 | automa_tion06 	| axutoz06@mailinator.com 	| 0988049999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
+      | autoZ07 | automa_tion07 	| axutoz07@mailinator.com 	| 0988049999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
      # | autoY15 | test_ing15 	| autoy15@mailinator.com 	| 0999042154 	| Trụ sở chính 	| Tái bảo hiểm 	| Tái bảo hiểm 	| Nhân viên |
     #  | autoX35 | automa_tion35 	| axutox35@mailinator.com 	| 0988049999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
     #  | autoY15 | test_ing15 	| autoy15@mailinator.com 	| 0999042154 	| Trụ sở chính 	| Tái bảo hiểm 	| Tái bảo hiểm 	| Nhân viên |
