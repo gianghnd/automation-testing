@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/nguoidung",
+        features = "src/test/resources/nguoidung/Create-User.feature",
         glue = "stepDefinations",
         monochrome=true,
         dryRun = false,

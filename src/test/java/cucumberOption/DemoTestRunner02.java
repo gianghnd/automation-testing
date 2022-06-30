@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/nguoidung",
+        features = "src/test/resources/nguoidung/Execute-With-New-User.feature",
         glue = "stepDefinations",
         monochrome=true,
         dryRun = false,

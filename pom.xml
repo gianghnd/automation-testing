@@ -121,6 +121,7 @@
                     <testFailureIgnore>true</testFailureIgnore>
                     <includes>
                         <include>**/*/DemoTestRunner.java</include>
+                        <include>**/*/DemoTestRunner02.java</include>
                     </includes>
                 </configuration>
             </plugin>
