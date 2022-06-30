@@ -22,8 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import static commons.GlobalConstants.USER_ACCOUNT;
-import static commons.GlobalConstants.USER_PASSWORD;
+import static commons.GlobalConstants.*;
 
 public class CommonPageSteps {
     WebDriver driver;
@@ -146,6 +145,7 @@ public class CommonPageSteps {
         commonPage.inputValueIntoTextbox(driver, tenField, value);
         if(tenField.equalsIgnoreCase("Tên đăng nhập")){
             USER_ACCOUNT = value;
+            FLAG_CREATE_USER = true;
         }
     }
 
@@ -404,7 +404,11 @@ public class CommonPageSteps {
             driver.manage().window().maximize();
             LoginPageObject loginPage;
             loginPage = PageGeneratorManager.getLoginPage(driver);
-            loginPage.inputUserName(USER_ACCOUNT);
+            if(!FLAG_CREATE_USER){
+                loginPage.inputUserName(userName);
+            }else{
+                loginPage.inputUserName(USER_ACCOUNT);
+            }
             loginPage.inputUserPassword(password);
             loginPage.clickDangNhapButton();
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);// Network was lag
