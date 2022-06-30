@@ -1,5 +1,5 @@
 @Create-User
-Feature: Tao Nguoi Dung
+Feature: Create User
   As a Admin User I want to Tao Nguoi Dung
 
   Scenario Outline: Create Người Dùng with all fields
