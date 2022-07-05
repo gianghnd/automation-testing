@@ -409,6 +409,8 @@ public class CommonPageSteps {
             }else{
                 loginPage.inputUserName(USER_ACCOUNT);
             }
+            FLAG_CREATE_USER = true;
+            
             loginPage.inputUserPassword(password);
             loginPage.clickDangNhapButton();
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);// Network was lag
