@@ -31,7 +31,7 @@ Feature: Create User
 
     Examples:
       | Tên Đăng Nhập | Họ Và Tên | Email | Số điện thoại | Đơn Vị       | Phòng Ban     | Chức Năng | Chức Danh |
-      | autoZ26 | automa_tion26 	| axutoz26@mailinator.com 	| 0939799999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
-      | autoZ25 | automa_tion25 	| axutoz25@mailinator.com 	| 0939799999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
+      | autoZ30 | automa_tion30 	| axutoz30@mailinator.com 	| 0939799999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
+      | autoZ31 | automa_tion31 	| axutoz31@mailinator.com 	| 0939799999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
   #    | autoZ28 | automa_tion28 	| axutoz28@mailinator.com 	| 0939799999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
   #    | autoZ26 | automa_tion26 	| axutoz26@mailinator.com 	| 0939799999 	| Trụ sở chính 	| Tái bảo hiểm 	| Điều hành 	| Giám đốc Ban |
